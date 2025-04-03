@@ -11,7 +11,7 @@ const products = [
     image: 'https://media.cnn.com/api/v1/images/stellar/prod/140430115517-06-comfort-foods.jpg?q=w_1110,c_fill',
   },
   {
-    name: 'fish combo',
+    name: 'FISH OVER RICE',
     ingredians: 'Fish,cheese,lettuce,mayo,onions,halaponis,pickcles,atay,oreo',
     rating: '★★★★☆ 87',
     price: '$20.95',
