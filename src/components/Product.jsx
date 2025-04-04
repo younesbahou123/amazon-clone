@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const Product = ({ name, ingredients = ["onions","pepsi","coca","pickles","halapinos","tomoto","potato","parclt"], rating, price, image }) => {
+const Product = ({ name, ingredients = ["all ingredients","onions","pepsi","coca","pickles","halapinos","tomoto","potato","parclt"], rating, price, image }) => {
   const [showIngredients, setShowIngredients] = useState(false);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState('');
   const [isEditing, setIsEditing] = useState(false);
-
+  const [quantity, setQuantity] = useState(1); // Added quantity state
   const toggleIngredients = () => {
     setShowIngredients(!showIngredients);
   };
@@ -39,7 +39,15 @@ const Product = ({ name, ingredients = ["onions","pepsi","coca","pickles","halap
   const editNotes = () => {
     setIsEditing(true);
   };
+  const increaseQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
 
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(prev => prev - 1);
+    }
+  };
   return (
     <div className="product">
       <img src={image} alt={name} />
@@ -108,6 +116,11 @@ const Product = ({ name, ingredients = ["onions","pepsi","coca","pickles","halap
       <p>Selected items: {selectedIngredients.join(', ')}</p>
       <p>{rating}</p>
       <p>{price}</p>
+      <div className="quantity-selector">
+        <button onClick={decreaseQuantity} className="quantity-btn">-</button>
+        <span className="quantity-value">{quantity}</span>
+        <button onClick={increaseQuantity} className="quantity-btn">+</button>
+      </div>
       <button>Add to Cart</button>
     </div>
   );
