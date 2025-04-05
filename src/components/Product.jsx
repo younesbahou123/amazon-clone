@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const Product = ({ name, ingredients = ["all ingredients","onions","pepsi","coca","pickles","halapinos","tomoto","potato","parclt"], rating, price, image }) => {
+const Product = ({ name,ingredients = ["all ingredients","onions","pepsi","coca","pickles","halapinos","tomoto","potato","parclt"], rating, price, image }) => {
   const [showIngredients, setShowIngredients] = useState(false);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [showNotes, setShowNotes] = useState(false);
@@ -48,14 +48,39 @@ const Product = ({ name, ingredients = ["all ingredients","onions","pepsi","coca
       setQuantity(prev => prev - 1);
     }
   };
+
+  const [customTime, setCustomTime] = useState('1 hour'); // New state for custom time
+  const [showTimeInput, setShowTimeInput] = useState(false); // New state for input visibility
   return (
     <div className="product">
       <img src={image} alt={name} />
       <h2>{name}</h2>
-      <div className="ready-time-tag">
-        <span className="ready-time-icon">⏱️</span>
-        <span>Ready within an hour</span>
+      <div className="ready-time-container">
+        <div className="ready-time-display" onClick={() => setShowTimeInput(!showTimeInput)}>
+          <span className="ready-time-icon">⏱️</span>
+          <span>Ready within: {customTime}</span>
+          <span className="edit-time-icon">✏️</span>
+        </div>
+        
+        {showTimeInput && (
+          <div className="time-input-container">
+            <input
+              type="text"
+              value={customTime}
+              onChange={(e) => setCustomTime(e.target.value)}
+              placeholder="Enter your preferred time"
+              className="time-input"
+            />
+            <button 
+              onClick={() => setShowTimeInput(false)}
+              className="save-time-btn"
+            >
+              Save
+            </button>
+          </div>
+        )}
       </div>
+     
       <div className="button-group">
         <button onClick={toggleIngredients}> <select name="" id=""></select> Ingredient-list </button>
         <button onClick={toggleNotes}>Add Meal-Notes </button>

@@ -596,23 +596,63 @@
   text-align: center;
   font-weight: bold;
 }
-/*adding time tag*/
+
+/* modifyong readiness time*/
+
 /* Add to existing styles */
 
-.ready-time-tag {
+.ready-time-container {
+  margin: 10px 0;
+}
+
+.ready-time-display {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin: 5px 0 10px;
-  padding: 5px 10px;
+  gap: 8px;
+  padding: 8px 12px;
   background-color: #e8f5e9;
   border-radius: 15px;
-  color: #2e7d32;
-  font-size: 14px;
-  width: 94%;
-  
+  cursor: pointer;
+  border: 1px solid #ddd;
+  width: 92%;
+}
+
+.ready-time-display:hover {
+  background-color: #e0e0e0;
 }
 
 .ready-time-icon {
   font-size: 16px;
+}
+
+.edit-time-icon {
+  margin-left: auto;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.time-input-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.time-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.save-time-btn {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-time-btn:hover {
+  background-color: #45a049;
 }
