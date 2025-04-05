@@ -596,3 +596,23 @@
   text-align: center;
   font-weight: bold;
 }
+/*adding time tag*/
+/* Add to existing styles */
+
+.ready-time-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 5px 0 10px;
+  padding: 5px 10px;
+  background-color: #e8f5e9;
+  border-radius: 15px;
+  color: #2e7d32;
+  font-size: 14px;
+  width: 94%;
+  
+}
+
+.ready-time-icon {
+  font-size: 16px;
+}

@@ -52,7 +52,10 @@ const Product = ({ name, ingredients = ["all ingredients","onions","pepsi","coca
     <div className="product">
       <img src={image} alt={name} />
       <h2>{name}</h2>
-      
+      <div className="ready-time-tag">
+        <span className="ready-time-icon">⏱️</span>
+        <span>Ready within an hour</span>
+      </div>
       <div className="button-group">
         <button onClick={toggleIngredients}> <select name="" id=""></select> Ingredient-list </button>
         <button onClick={toggleNotes}>Add Meal-Notes </button>
