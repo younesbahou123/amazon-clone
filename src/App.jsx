@@ -5,7 +5,7 @@ import './components/App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Home Made Food</h1>
+      <h1>Fresh Moroccan Home Made Food</h1>
       <ProductList />
     </div>
   );
